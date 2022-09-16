@@ -11,9 +11,9 @@ public class Container {
         this.suitcases = new ArrayList<Suitcase>();
     }
 
-    public void addSuitcase(Suitcase suitcase){
+    public void addSuitcase(Suitcase suitcase) {
         int weightCurrent = this.totalWeight();
-        if(weightCurrent + suitcase.totalWeight() <= this.weightLimit) {
+        if (weightCurrent + suitcase.totalWeight() <= this.weightLimit) {
             this.suitcases.add(suitcase);
         }
     }
@@ -23,13 +23,19 @@ public class Container {
         return this.suitcases.size() + " suitcases (" + this.totalWeight() + " kg)";
     }
 
-    public int totalWeight(){
+    public int totalWeight() {
         int weightCurrent = 0;
-        for (Suitcase currentSuitcase :this.suitcases) {
+        for (Suitcase currentSuitcase : this.suitcases) {
             weightCurrent += currentSuitcase.totalWeight();
         }
         return weightCurrent;
     }
 
-
+    public void printThings() {
+        for (Suitcase currentSuitcase : this.suitcases) {
+            for (Thing currentThing : currentSuitcase.getThings()) {
+                System.out.println(currentThing);
+            }
+        }
+    }
 }
