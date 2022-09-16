@@ -8,7 +8,6 @@ public class Ex39 {
         }
         System.out.println();
     }
-
     private static void printSquare(int sideSize){
         int row = 1;
         while(row <= sideSize){
@@ -21,8 +20,20 @@ public class Ex39 {
             row++;
         }
     }
+    private static void printRectangle(int width, int height){
+        int row = 1;
+        while(row <= height){
+            int field = 1;
+            while(field <= width){
+                System.out.print("* ");
+                field++;
+            }
+            System.out.println();
+            row++;
+        }
+    }
 
     public static void main(String[] args) {
-        printSquare(4);
+        printRectangle(17,3);
     }
 }
