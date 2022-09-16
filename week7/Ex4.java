@@ -6,15 +6,17 @@ public class Ex4 {
         Thing mobile = new Thing("Nokia 3210", 1);
         Thing brick = new Thing("Brick", 4);
 
-        Suitcase suitcase = new Suitcase(10);
+        Suitcase tomsCase = new Suitcase(10);
+        tomsCase.addThing(book);
+        tomsCase.addThing(mobile);
 
-        suitcase.addThing(book);
+        Suitcase georgesCase = new Suitcase(10);
+        georgesCase.addThing(brick);
 
-        suitcase.addThing(mobile);
+        Container container = new Container(1000);
+        container.addSuitcase(tomsCase);
+        container.addSuitcase(georgesCase);
 
-        suitcase.addThing(brick);
-
-        Thing heaviest = suitcase.heaviestThing();
-        System.out.println("The heaviest thing: " + heaviest);
+        System.out.println(container);
     }
 }
